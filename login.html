@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/master.css">
+  <!-- Google Fonts -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Ruwudu&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Trendiera</title>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="loader" id="loader">
+      <div class="dot-spinner">
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+      </div>
+    </div>
+    <div class="header">
+      <div class="first-section">
+        <img src="./imgs/trendiera.png" alt="">
+        <a href="index.html">trendiera</a>
+      </div>
+      <div class="second-section">
+        <div class="icons-holder">
+          <div class="icons">
+            <div class="darkLight">
+              <i class='bx bx-sun sun'></i>
+              <i class="fa-regular fa-moon moon"></i>
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+    <div class="login" id="login">
+      <div class="container">
+        <div class="input">
+          <h3 style="margin-right: 20px;">User Name:</h3>
+          <input type="text" id="username-input" placeholder="Enter Your Username">
+        </div>
+        <div class="input">
+          <h3 style="margin-right: 35px;">Password:</h3>
+          <input type="password" id="password-input" placeholder="Enter Your Password">
+        </div>
+        <div class="buttons">
+          <div class="button">
+            <button onclick="loginBtnClicked()">Login</button>
+          </div>
+          <div class="button">
+            <a href="register.html">Register</a>
+          </div>
+        </div>
+  </div>
+  </div>
+  <div id="liveAlertPlaceholder" style="position: fixed; z-index: 99999; width:30%; bottom:0; right:0;"></div>
+  <script src="/js/main.js"></script>
+</body>
+  </html>  

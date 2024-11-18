@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/master.css">
+  <!-- Google Fonts -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"rel="stylesheet"/>
+    <link rel="icon" href="imgs/trendiera.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Trendiera</title>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <!-- /* From Uiverse.io by abrahamcalsin */  -->
+    <div class="loader" id="loader">
+      <div class="dot-spinner">
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+      </div>
+    </div>
+    <div class="header" id="header-logout">
+      <div class="first-section">
+        <img src="./imgs/trendiera.png" alt="">
+        <a href="index.html">trendiera</a>
+      </div>
+      <div class="second-section">
+        <div class="icons-holder">
+          <div class="buttons" id="buttons-holder">
+            <div class="button" id="login-btn"><a href="login.html">Login</a></div>
+            <div class="button" id="register-btn"><a href="register.html">Register</a></div>
+          </div>
+          <!-- <button type="button" onclick="logout()" class="btn btn-outline-danger" id="logout-btn">Logout</button> -->
+          <div class="icons">
+            <div class="darkLight">
+              <i class='bx bx-sun sun'></i>
+              <i class="fa-regular fa-moon moon"></i>
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+  <div class="main-container">
+    <div class="side" id="side">
+      <div class="first-holder">
+        <a class="first-section" style="margin-bottom: 30px;" href="index.html">
+          <img src="./imgs/trendiera.png" alt="">
+          <h2>trendiera</h2>
+        </a>
+        <a class="mini-holder" id="mini-holder" href="index.html">
+          <i class="fa-solid fa-house"></i>
+          <h3>Home</h3>
+        </a>
+        <div class="mini-holder">
+          <i class="bi bi-search"></i>
+          <h3>Search</h3>
+        </div>
+        <div class="mini-holder">
+          <i class="fa-regular fa-compass"></i>
+          <h3>Explore</h3>
+        </div>
+        <div class="mini-holder">
+          <i class="fa-regular fa-circle-play"></i>
+          <h3>Reels</h3>
+        </div>
+        <div class="mini-holder">
+          <i class="bi bi-messenger"></i>
+          <h3>Messages</h3>
+        </div>
+        <div class="mini-holder">
+          <i class="fa-regular fa-heart"></i>
+          <h3>Notifications</h3>
+        </div>
+        <div class="mini-holder" id="add-btn" onclick="addBtnClicked()">
+          <i class="bi bi-plus-square"></i>
+          <h3>Create</h3>
+        </div>
+        <a class="mini-holder" onclick="profileClicked()" style="gap: 14px; padding: 13px 100px 13px 10px;">
+          <img class="profile-pic" id="profile-pic" src="./imgs/m7m3.jpg" alt="">
+          <h3>Profile</h3>
+        </a>
+      </div>
+      <div class="second-holder">
+            <div class="darkLight" id="darkLight">
+              <div class="mini-holder">
+              <i class='bx bx-sun sun'></i>
+              <i class="fa-regular fa-moon moon"></i>
+              <h3>Switch Appearance</h3>
+            </div>
+            </div>
+          <div class="main-holder">
+        <button class="mini-holder" onclick="logout()">
+          <i class="bi bi-arrow-left-square"></i>
+          <h3>Sign out</h3>
+        </button>
+      </div>
+      </div>
+    </div>
+    <div class="home">
+      <div class="hidden-header" id="hidden-header" >
+        <div class="mini-header">
+        <a class="first-section" href="index.html">
+          <img src="./imgs/trendiera.png" alt="">
+          <h2>trendiera</h2>
+        </a>
+        <div class="second-section">
+          <button id="logout" onclick="logout()">logout</button>
+          <div class="icon">
+            <div class="icons">
+              <div class="darkLight">
+                <i class='bx bx-sun sun'></i>
+                <i class="fa-regular fa-moon moon"></i>
+              </div>
+            </div>
+            <i class="fa-regular fa-heart"></i>
+          </div>
+      </div>
+      </div>
+    </div>
+      <div class="container">
+
+        <div class="holder">
+
+        <div class="header-holder">
+          <div class="header first" id="header-login">
+            <div class="stories">
+              <div class="story main">
+                <div class="image">
+                  <img src="./imgs/m7m3.jpg" id="story-pic" alt= "">
+                </div>
+                <i class='bx bxs-plus-circle' style='color:#ffffff' ></i>
+                <h5>Your Story</h5>
+              </div>
+              <div class="story">
+                <div class="image">
+                  <img src="./imgs/y7ya.jpg" alt="">
+                </div>
+                <h5>theyayaazzam</h5>
+              </div>
+              <div class="story">
+                <div class="image">
+                  <img src="./imgs/cr7.jpg" alt="">
+                </div>
+                <h5>cristiano</h5>
+              </div>
+              <div class="story">
+                <div class="image">
+                  <img src="./imgs/messi.jpg" alt= "">
+                </div>
+                <h5>leomessi</h5>
+              </div>
+              <div class="story">
+                <div class="image">
+                  <img src="./imgs/3bdo.jpg" alt= "">
+                </div>
+                <h5>abdelrhman</h5>
+              </div>
+              <div class="story">
+                <div class="image">
+                  <img src="./imgs/7oda.jpg" alt= "">
+                </div>
+                <h5>mahmoudxz</h5>
+              </div>
+              <div class="story">
+                <div class="image">
+                <img src="./imgs/hamouda.jpg" alt= "">
+              </div>
+                <h5>hamoudaa</h5>
+              </div>
+          </div>
+        </div>
+        <div class="posts" id="posts">
+          
+        </div>
+        
+      </div>
+        <div class="follow" id="follow">
+          <div class="account">
+            <div class="account-details">
+              <img id="account-img" src="" alt="">
+              <div class="user-name">
+                <h4 id="account-username"></h4>
+                <h4 id="account-name"></h4>
+              </div>
+            </div>
+            <button id="logout" onclick="logout()">logout</button>
+          </div>
+          <div class="followers">
+            <div class="title">
+              <h5>Followers</h5>
+              <h5>See All</h5>
+            </div>
+            <div class="account">
+              <div class="user-details">
+                <img src="./imgs/3kr4.jpg" alt="">
+                <div class="user-name">
+                  <h4>3kr4_official</h4>
+                  <h4>mahmoudelshazly</h4>
+                </div>
+              </div>
+              <h5>follow</h5>
+          </div>
+            <div class="account">
+              <div class="user-details">
+                <img src="./imgs/adham.jpg" alt="">
+                <div class="user-name">
+                  <h4>_adham_osama</h4>
+                  <h4>Adham Osama</h4>
+                </div>
+              </div>
+              <h5>follow</h5>
+          </div>
+            <div class="account">
+              <div class="user-details">
+                <img src="./imgs/killwa.jpg" alt="">
+                <div class="user-name">
+                  <h4>Killwa</h4>
+                  <h4>Ahmed Shalaby</h4>
+                </div>
+              </div>
+              <h5>follow</h5>
+          </div>
+            <div class="account">
+              <div class="user-details">
+                <img src="./imgs/endy.jpg" alt="">
+                <div class="user-name">
+                  <h4>Endy</h4>
+                  <h4>Mohamed Gad</h4>
+                </div>
+              </div>
+              <h5>follow</h5>
+          </div>
+            <div class="account">
+              <div class="user-details">
+                <img src="./imgs/nagi.jpg" alt="">
+                <div class="user-name">
+                  <h4>Nagi</h4>
+                  <h4>Ahmed Hani</h4>
+                </div>
+              </div>
+              <h5>follow</h5>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="modal fade" id="create-post-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+          <div class="modal-content" style="background-color: var(--box-color); color: var(--text-color);">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" style=" color: var(--second-title-color);" id="post-modal-title">Create A New Post</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label" style=" color: var(--second-title-color);">Title</label>
+                  <input type="text" class="form-control" id="create-post-title-input" style="border: 1px solid black; background-color: var(--second-input-color); outline: none;" value="">
+                  <input type="hidden" id="post-id-input" value="">
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label" style=" color: var(--second-title-color);">Body</label>
+                  <textarea name="" id="post-body-input" style="width: 100%; height:100px; resize: none; border: 1px solid black; border-radius: 5px; background-color: var(--second-input-color); outline: none"></textarea>
+                </div>
+                <div class="mb-3">
+                    <div class="holder" style="text-align: center;">
+                    <div class="input-holder">
+                      <input type="file" class="form-control" id="post-image-input" style="border: 1px solid black; background-color: var(--second-input-color); outline: none;" value="">
+                      <label for="post-image-input" class="col-form-label" > <i class="fa-solid fa-upload"></i> Upload Image</label>
+                    </div>
+                </div>
+              </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" id="postModalSubmit" class="btn btn-primary" onclick="createNewPostClicked()">Create</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="delete-post-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+          <div class="modal-content" style="background-color: var(--box-color); color: var(--text-color);">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" style=" color: var(--second-title-color);" id="post-modal-title">Are you sure you want to delete the post? <span id="delete-post-title"></span></h1>
+              <button type="button" style="display: none;" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <input type="text" style="display: none;" id="delete-post-id-input" value="">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" id="postModalSubmit" class="btn btn-danger" onclick="confirmPostDelete()">Yes, Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="add" id="add-btn" onclick="addBtnClicked()" >
+        
+        <i class="bi bi-plus-lg"></i>
+      </div>
+    </div>
+  </div>
+  <div id="liveAlertPlaceholder"></div>
+  </div> 
+  
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+      const user = getCurrentUser()
+      document.getElementById("account-img").src = user.profile_image
+      document.getElementById("account-name").innerHTML = user.name
+      document.getElementById("account-username").innerHTML = user.username
+    </script>
+</body>
+  </html>  
